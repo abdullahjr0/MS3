@@ -65,6 +65,12 @@ def login():
                 flash("Wrong Email Address")
                 return redirect('/login')
         return render_template('/signin.html')
+    
+    @app.route("/logout")
+    @login_required
+    def logout():
+        logout_user()
+        return redirect("/")
 
 @app.route("/contact_us", methods=["GET","POST"])
 @login_required
