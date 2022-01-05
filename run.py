@@ -13,15 +13,6 @@ def index():
     return render_template("HomePage.html")
 
 
-@app.route("/Category")
-def category():
-    return render_template("category.html")
-
-@app.route("/contact")
-@login_required
-def contact():
-    return render_template("FeedBackForm.html")
-
 @app.route("/register", methods=["POST","GET"])
 def register():
     if request.method == "POST":
@@ -65,12 +56,34 @@ def login():
                 flash("Wrong Email Address")
                 return redirect('/login')
         return render_template('/signin.html')
-    
-    @app.route("/logout")
-    @login_required
+
+@app.route("/main_course")
+def main_course():
+    data = Recipes.query.filter_by(category='Main Course').all()
+    return render_template("main_course.html", data=data)
+
+@app.route("/drink")
+def drink():
+    data = Recipes.query.filter_by(category='Drink').all()
+    return render_template("drink.html", data=data)
+
+
+@app.route("/desert")
+def desert():
+    data = Recipes.query.filter_by(category="Desert").all()
+    return render_template("desert.html",data=data)
+
+
+@app.route("/contact")
+@login_required
+def contact():
+    return render_template("FeedBackForm.html")
+
+@app.route("/logout")
+@login_required
     def logout():
-        logout_user()
-        return redirect("/")
+    logout_user()
+    return redirect("/")
 
 @app.route("/contact_us", methods=["GET","POST"])
 @login_required
@@ -78,6 +91,5 @@ def contact_us():
     message = "yes"
     return render_template("FeedBackForm.html", message = message)
 
-        
-    if __name__ == "__main__":
-        app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
