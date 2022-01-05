@@ -36,3 +36,38 @@ The live website can be found here
       - [Recipe Category Images:](#recipe-category-images)
       - [404 Error Page](#404-error-page)
     + [**Acknowledgements**](#acknowledgements)
+
+
+  ## 1. **UX**
+
+    ### **User Stories**
+
+    Browsing 
+    * As a user I want to be able to navigate through the website seamlessly.
+    * As a user I want to be able to be presented with popular recipes so I am introduced to new content.
+    
+
+    Searching
+    * As a user I want to be able to search for new recipes using a search bar as well as through the nav bar.
+    * As a user I want to be be able to save my favourite recipes
+    * As a user I want to be able to view recipes by their appropriate categories.
+
+    Uploading Recipes
+    * As a user I want to be able to upload my own recipes.
+    * As a user I want to edit recipes I have uploaded.
+    * As a user I want to delete recipes I have uploaded.
+
+    Users
+    * As a user I want to be able to Sign up to the site
+    * As a user I want to be able to Log back into the site later.
+    * As a registered user I would like to be able to view my account and access my saved recipes.
+
+    
+    Administration
+    *  As an admin I want to be able to edit and delete content to maintain site rules.
+    *  As an admin I want to be able to add and edit food categories, to help improve user experience.
+
+    General
+    * As a user I would like to be contacted in order to recieve feedback on my site
+
+  
