@@ -1,20 +1,49 @@
-<!-- Page Header -->
-<header class="masthead" style="background-image: url(../static/img/sign-in.jpeg)">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="site-heading">
-                    <h1>Sign in to add your own recipe!</h1>
-                </div>
-            </div>
+{%extends 'base.html'%}
+{%block content%}
+    <div style="background-image: url('static/images/feedback.jpg');" class="bgImage">
+        {%if message%}
+        <div style="
+    border:2px solid white;
+    margin:10% 30% 0% 30%;
+    background: rgba(255, 255, 255, 0.575);
+	backdrop-filter:blur(10px);">
+        <h1 text-align="center"> style="padding:40px 0px 40px 0px; color:white; ">Thanks for your feedback</h1>
+            <h6 text-align="center">Your feedback has been submitted. return to <a href="/">Home</a> page</h6>
         </div>
+        {%else%}
+        <div class ="heading">
+            <h1 class="text-center">Send Us Feedback!</h1>
+        </div>
+            <form class="form" action="/contact_us" method="post">
+                <div class="form-fields">
+    
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control " id="name" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control " id="email" placeholder="Email" pattern=".+@gmail.com" title=" e.g username@gmail.com">
+                        </div>
+                    </div> <div class="form-group">
+                        <div class="col-sm-10">
+                        <textarea rows = "4" class="form-control" id="message" placeholder="Message"></textarea>
+                        </div>
+                    </div> 
+                    
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <button class="btn btn-outline-dark  btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
+                    </div>
+                </div>
+
+                
+                </div>
+
+            </form>
+        {%endif%}
+     
     </div>
-</header>
-
-
-{% extends "base.html" %} 
-{% block content %} 
-    <h1>Sign In</h1>
-{% endblock %} 
-
+  
+{%endblock%}
