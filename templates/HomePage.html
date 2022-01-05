@@ -1,0 +1,16 @@
+{%extends 'base.html' %}
+    {%block content%}
+    <main role="main">
+
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:60%;">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="first-slide img border-bottom border border-white" src={{url_for("static",filename="images/recipes.jpg")}} alt="First slide">
+            <div class="container">
+              <div class="carousel-caption text-center">
+                <h1 class=" text-center">All Recipes</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -1,13 +1,16 @@
+from flask import Flask, render_template,request , redirect , flash , url_for
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime, date
+from flask_login import LoginManager,UserMixin,login_required,current_user,login_user,logout_user
+from werkzeug.utils import secure_filename
 import os
-from flask import Flask, render_template
-
-
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    data = Recipes.query.all()
+    return render_template("HomePage.html")
 
 
 @app.route("/Category")
@@ -25,7 +28,4 @@ def sign():
 
 
 if __name__ == "__main__":
-    app.run(
-        host=os.environ.get("IP", "0.0.0.0"),
-        port=int(os.environ.get("PORT", "5000")),
-        debug=True)
+    app.run(debug=True)
