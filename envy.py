@@ -1,0 +1,1 @@
+iron[“MONGO_URI”] = mongodb+srv://Abdullahjr:<Youwillneverguess>@myfirstcluster.lzhlc.mongodb.net/Project_0?retryWrites=true&w=majority

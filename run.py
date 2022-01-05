@@ -123,7 +123,7 @@ def contact():
 
 @app.route("/logout")
 @login_required
-    def logout():
+def logout():
     logout_user()
     return redirect("/")
 
@@ -141,4 +141,6 @@ def search():
         return  render_template("search.html", data = key)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=False)
