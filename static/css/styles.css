@@ -29,5 +29,75 @@
 }
 .dropdown-item:hover{
     text-decoration: underline;
+}
 
+.card{
+    min-width: 260px;
+    max-width: 23%;
+    margin-top: 2%;
+    min-height: 170px;
+    
+}
+
+  .text-center{
+      margin-bottom: 6%;
+  }
+  .carddeck{
+      max-width: 48%;
+    padding:3%;
+    min-width: 300px;
+      margin: auto;
+      padding-bottom: 30px;
+  }
+  .card-img-top{
+      width: 260px;
+      height: 170px;
+  }
+  .bgImage{
+    border: 5px solid black;
+    width: 100%;
+    min-height: 100%;
+    max-height: auto; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 100px;
+    
+}
+.modal-content{
+width: 150%;
+}
+.modal-title{
+    color: white;
+}
+
+.form{
+    margin:auto;
+    margin-top: 4%;
+    margin-bottom: 10%;
+    max-width: 48%;
+    padding: 3%;
+    min-width: 300px;
+    position:relative;
+	background: rgba(255, 255, 255, 0.575);
+	backdrop-filter:blur(10px);
+   
+}
+.form-control{
+   max-width: 350px;
+}
+.text-center{
+    font-size: 5vh;
+    
+}
+.heading{
+    margin:auto;
+    letter-spacing: 0.1ch;
+    min-height: 50px;
+    max-height: fit-content;
+    font-weight: bold;
+    width: 40%;
+    color: white;
+	background:transparent;
 }
