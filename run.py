@@ -57,6 +57,49 @@ def login():
                 return redirect('/login')
         return render_template('/signin.html')
 
+@app.route("/profile")
+@login_required
+def profile():
+    data = Recipes.query.filter_by(username = current_user.name).all()
+
+    return render_template("UserPage.html" , data = data)
+
+@app.route("/add_recipes", methods=["POST","GET"])
+@login_required
+def add_recipes():
+    if request.method == "POST":
+        category = request.form['category']
+        name = request.form['name']
+        clocktime = request.form['clocktime']
+        ingredient = request.form['ingredient']
+        serving = request.form['serving']
+        image = request.files['img']
+        instruction = request.form['instruction']
+        filename = secure_filename(image.filename)
+
+        post = Recipes(
+            name = name,
+            category = category,
+            clocktime = clocktime,
+            ingredients = ingredient,
+            image = filename,
+            serving= serving,
+            username = current_user.name,
+            instruction = instruction
+        )
+        if str(filename.split('.')[1]) not in Allowed:
+            print(filename.split(".")[1])
+            flash("Our website does not support that type of extension")
+            return redirect("/add_recipes")
+
+        image.save(os.path.join(Upload_dir, filename))
+        db.session.add(post)
+        db.session.commit()
+        flash("succesfully posted recipes")
+        return redirect("/profile")
+    return render_template("RecipeForm.html")
+
+
 @app.route("/main_course")
 def main_course():
     data = Recipes.query.filter_by(category='Main Course').all()
@@ -72,7 +115,6 @@ def drink():
 def desert():
     data = Recipes.query.filter_by(category="Desert").all()
     return render_template("desert.html",data=data)
-
 
 @app.route("/contact")
 @login_required
@@ -90,6 +132,13 @@ def contact():
 def contact_us():
     message = "yes"
     return render_template("FeedBackForm.html", message = message)
+
+@app.route("/search", methods=["GET","POST"])
+def search():
+    if request.method == "POST":
+        data = request.form['value']
+        key = Recipes.query.filter(Recipes.name.contains(data)).all()
+        return  render_template("search.html", data = key)
 
 if __name__ == "__main__":
     app.run(debug=True)
