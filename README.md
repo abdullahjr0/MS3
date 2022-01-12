@@ -150,8 +150,7 @@ View desktop wireframes [here](https://github.com/abdullahjr0/MS3/blob/9f5a24747
 
 ## 4. **Testing**
 
-The testing process can be seen in the [TESTING.md](testing.md) document.
-
+The testing process can be seen [here](https://github.com/abdullahjr0/MS3/blob/b7cb7ee1b4d806f146a3ebc26b760c1ad612dcf1/testing.md)
 
 ## 5. **Deployment**
 
@@ -217,3 +216,100 @@ The site is hosted using [Heroku](https://www.heroku.com/), deployed directly fr
       - Choose the correct branch you wish to deploy from the drop-down.
       - Select "Deploy Branch"
       - Heroku will return "Your App has successfully deployed". If this shows an error, troubleshooting will be needed.
+
+
+### GitHub and GitPod repository management
+
+### **How to clone 'Wanderlust Recipes' in GitHub, GitPod and setup on Heroku.**
+
+To run a version of the site locally, you can clone this repository using the following steps;
+
+In a code editor of your choice;
+
+1. Go to [GitHub.com](https://github.com/)
+2. Click on 'Responsitories'
+3. Click on 'Wanderlust Recipes'
+4. Click on the 'Code' button.
+5. Under 'HTTPS' click the clipboard icon to the right of the URL.
+6. In your IDE of choice, open a repository or create a new repository.
+7. Open Terminal \('Terminal' then 'New Terminal' from the top ribbon menu in GitPod.\)
+8. Type 'git clone', paste URL link and press enter.
+
+Additional information around these cloning steps can be found on [GitHub Pages Help Page](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
+&nbsp;
+
+#### Installing Requirements
+- Install all requirements modules to your local IDE with the following CL:
+
+```
+ pip3 install -r requirements.txt
+```
+
+#### Create Collections in MongoDB
+
+- Login to your MongoDB account
+- Create a Cluster
+
+![create a cluster](https://user-images.githubusercontent.com/79915855/149137564-c255f560-15b8-4fde-a1fb-3a267c585386.png)
+
+
+#### Setup Environmental Variables
+- Create a '.gitignore' file in the root directoy
+- Add 'env.py' and '__pycache__/' to the file list within .gitignore
+- Create a 'env.py' file
+- In the 'env.py' file write the following code;
+
+```
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "[UNIQUE ID]")
+os.environ.setdefault("MONGO_URI", "[UNIQUE ID]")
+os.environ.setdefault("MONGO_DBNAME", "[UNIQUE ID]")
+
+```
+
+Note: For each sectionedn noted as [UNIQUE ID], you will need to provide your own unique identifier. These must also be aligned to Heroku environmental variables.
+
+### Setup Unique Identifies / Environment Variables
+
+#### SECRET_KEY
+
+This is required when using flash() and session() functions in flask. The key can be whatever you want, but it's advisable to use a randomly generated secure key from websites such as [RandomKeyGen.com](https://randomkeygen.com/).
+
+#### MONGO_URI
+
+This is used to connect you application to your MongoDB cluster.
+
+- Click 'Overview' tab from your Cluster, followed by 'Connect'.
+
+![Connect Mongo Cluster](https://user-images.githubusercontent.com/79915855/149137563-6ca09358-f4d6-4f84-ab93-d038f0148d16.png)
+
+- Select 'Connect your application' from following window.
+
+![Connect Application](https://user-images.githubusercontent.com/79915855/149137561-75d21e45-3229-446f-8c17-b11a2db711a3.png)
+
+- Select your correct version of Python and copy the connection string.
+
+![Select your version](https://user-images.githubusercontent.com/79915855/149137566-c374f8c4-4222-4c15-8182-6a08226d19a3.png)
+
+- Replace the 'username' and 'password' text, with the relevant criteria you setup in 'Database Access'.
+
+![Database Access](https://user-images.githubusercontent.com/79915855/149137565-0dde3c10-ab43-4c2c-a358-72a81e0e6cae.png)
+
+#### MONGO_DBNAME
+
+This is the name of your database in MongoDB. Which can be foung under the 'Collections' tab, under your cluster.
+
+#### Running Development Server
+
+To launch a Http server using the development mode code for the application, use the following command in your IDE:
+
+```
+
+python3 app.py http.server
+
+```
+
+The IDE will then open a port with http address for you to access.
