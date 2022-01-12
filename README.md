@@ -70,8 +70,8 @@ The live website can be found here
   General
   * As a user I would like to be contacted in order to recieve feedback on my site
 
-### ***WIreframes***
-View desktop wireframes [here]()
+### ***Wireframes***
+View desktop wireframes [here](https://github.com/abdullahjr0/MS3/blob/9f5a247477dd36f72e5ab5c27bb1e7281da42dc7/wireframes.md#L29)
 
 
 
