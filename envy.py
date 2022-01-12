@@ -1,4 +1,7 @@
-iron[“MONGO_URI”] = mongodb+srv://Abdullahjr:<Youwillneverguess>@myfirstcluster.lzhlc.mongodb.net/Project_0?retryWrites=true&w=majority
+import os
 
-O_URI = os.environ.get(“MONGO_URI”)
-
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "[UNIQUE ID]")
+os.environ.setdefault("MONGO_URI", "[UNIQUE ID]")
+os.environ.setdefault("MONGO_DBNAME", "[UNIQUE ID]")
