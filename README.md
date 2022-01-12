@@ -70,10 +70,73 @@ The live website can be found here
   General
   * As a user I would like to be contacted in order to recieve feedback on my site
 
-### ***Wireframes***
-View desktop wireframes [here](https://github.com/abdullahjr0/MS3/blob/9f5a247477dd36f72e5ab5c27bb1e7281da42dc7/wireframes.md#L29)
+  ### **Wireframes**
+  View desktop wireframes [here](https://github.com/abdullahjr0/MS3/blob/9f5a247477dd36f72e5ab5c27bb1e7281da42dc7/wireframes.md#L29)
+
+## 3. **Technologies used**
 
 
+
+<details>
+<summary>Languages</summary>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/HTML">HTML</a> - Programming language providing content and structure of the website.</li>
+<li><a href="https://en.wikipedia.org/wiki/CSS">CSS</a> - Programming language providing styling of the website.</li>
+<li><a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a> - Programming language used for various interactive elements of the website, including game logic, audio options etc.</li>
+<li><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> - Programming language used to drive core site functionality including user login and push/retrieving database information.</li>
+</ul>
+</details>
+
+
+<details>
+<summary>Libraries</summary>
+<ul>
+<li><a href="https://fontawesome.com/">Font Awesome</a> - Library used for icons, such as social links and other images.</li>
+<li><a href="https://fonts.google.com/">Google Fonts</a> - Font style library.</li>
+<li><a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> - Micro-framework to simplify Python scripting and web server tasks.</li>
+</ul>
+</details>
+
+<details>
+<summary>Editor</summary>
+<ul>
+<li><a href="https://github.com/">GitHub</a> - Remote code repository.</li>
+<li><a href="https://gitpod.io/">GitPod</a> - IDE (Integrated Development Environment), for writing, editing and saving code.</li>
+<li><a href="https://balsamiq.com/">Balsamiq</a> - Wireframes for visual design testing.</li>
+</ul>
+</details>
+
+
+<details>
+<summary>Tools</summary>
+<ul>
+<li><a href="https://www.remove.bg/">remove.bg</a> - Remove backgrounds from png images.</li>
+<li><a href="https://coolors.co/">Coolers</a> - Color Palette Generation</li>
+<li><a href="https://realfavicongenerator.net/">Real Favicon Generator</a> - Generate favicons and icons for desktop and mobile usage.</li>
+<li><a href="http://ami.responsivedesign.is/">Am I Responsive?</a> - Responsive design demo in ReadMe summary.</li>
+<li><a href="https://www.responsivedesignchecker.com/">Responsive Design Checker</a> - Check website response across device types.</li>
+</ul>
+</details>
+
+
+<details>
+<summary>Database Management</summary>
+<ul>
+<li><a href="https://www.mongodb.com/cloud/atlas/">MongoDB</a> - Cloud based database management system, used for storing user profile and recipe information.</li>
+</ul>
+</details>
+
+<details>
+<summary>Deployment Platform</summary>
+<ul>
+<li><a href="https://www.heroku.com/">Heroku</a> - Remote hosting platform, for hosting of python driven websites and applications.</li>
+</ul>
+</details>
+
+
+## 4. **Testing**
+
+The testing process can be seen in the [TESTING.md](testing.md) document.
 
 
 ## 5. **Deployment**
