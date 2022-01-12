@@ -220,7 +220,7 @@ The site is hosted using [Heroku](https://www.heroku.com/), deployed directly fr
 
 ### GitHub and GitPod repository management
 
-### **How to clone 'Wanderlust Recipes' in GitHub, GitPod and setup on Heroku.**
+### **How to clone 'Random Recipes' in GitHub, GitPod and setup on Heroku.**
 
 To run a version of the site locally, you can clone this repository using the following steps;
 
@@ -228,7 +228,7 @@ In a code editor of your choice;
 
 1. Go to [GitHub.com](https://github.com/)
 2. Click on 'Responsitories'
-3. Click on 'Wanderlust Recipes'
+3. Click on 'Random Recipes'
 4. Click on the 'Code' button.
 5. Under 'HTTPS' click the clipboard icon to the right of the URL.
 6. In your IDE of choice, open a repository or create a new repository.
