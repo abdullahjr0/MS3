@@ -4,7 +4,18 @@ from datetime import datetime, date
 from flask_login import LoginManager,UserMixin,login_required,current_user,login_user,logout_user
 from werkzeug.utils import secure_filename
 import os
+from flask import Flask
+from flask_pymongo import PyMongo
+if os.path.exists("env.py"):
+    import env
+
 app = Flask(__name__)
+
+app.config["MONGO_DBNAME"] = 'task_manager'
+app.config[MONGO_URI] = os.environ.get("MONGO_URI", "mongodb://localhost")
+app.secret_key = os.environ.get('SECRET_KEY') 
+
+mongo = PyMongo(app)
 
 
 @app.route("/")
@@ -140,7 +151,8 @@ def search():
         key = Recipes.query.filter(Recipes.name.contains(data)).all()
         return  render_template("search.html", data = key)
 
-if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
-            debug=False)
+if __name__ == '__main__':
+
+    app.run(host=os.environ.get('IP'),
+        port=int(os.environ.get('PORT')),
+        debug=True)
